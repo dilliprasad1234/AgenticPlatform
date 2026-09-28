@@ -1,0 +1,12 @@
+id: fleet_recommendation_evidence
+name: Fleet Recommendation Evidence Guardrail
+description: Blocks recommendations that lack traceable evidence or required recommendation structure.
+type: output
+action: block
+implementation_file: fleet_recommendation_evidence.py
+configuration:
+  required_fields:
+  - recommendation_status
+  - recommendations
+  - additional_information_required
+enabled: true

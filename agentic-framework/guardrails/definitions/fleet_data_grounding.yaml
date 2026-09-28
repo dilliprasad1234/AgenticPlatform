@@ -1,0 +1,15 @@
+id: fleet_data_grounding
+name: Fleet Data Grounding Guardrail
+description: Ensures collection and analysis outputs contain traceable fleet data and do not fabricate records or metrics.
+type: output
+action: block
+implementation_file: fleet_data_grounding.py
+configuration:
+  required_collection_fields:
+  - collection_status
+  - records
+  required_analysis_fields:
+  - analysis_status
+  - fleet_metrics
+  - device_analysis
+enabled: true

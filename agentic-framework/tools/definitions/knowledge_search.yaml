@@ -1,0 +1,19 @@
+id: knowledge_search
+name: Knowledge Search
+description: Search a named knowledge base collection for context relevant to a question. If the agent's instructions specify a collection name, always pass it explicitly rather than relying on the default.
+purpose: Retrieve grounded context from the framework's RAG knowledge base before an agent answers
+inputs:
+  - name: question
+    type: string
+    description: The question to search the knowledge base for
+    required: true
+  - name: collection
+    type: string
+    description: Name of the knowledge base collection to search (e.g. "legal_docs", "engineering_docs"). Defaults to "eaf_knowledge" if not specified by the agent's instructions.
+    required: false
+  - name: top_k
+    type: integer
+    description: Number of matching chunks to return (default 5)
+    required: false
+output_description: List of matched text chunks with their source filename
+implementation_file: knowledge_search.py

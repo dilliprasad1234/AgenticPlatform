@@ -1,0 +1,14 @@
+id: mcp_read_only
+name: MCP Read Only Guardrail
+description: Prevents the Fleet workflow from using MCP operations that mutate external systems.
+type: input
+action: block
+implementation_file: mcp_read_only.py
+configuration:
+  allowed_operations:
+  - list_tools
+  - pg_list_tables
+  - pg_describe_table
+  - pg_select_rows
+  - pg_execute_query
+enabled: true

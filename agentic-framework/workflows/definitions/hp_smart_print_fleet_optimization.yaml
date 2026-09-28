@@ -1,0 +1,27 @@
+id: hp_smart_print_fleet_optimization
+name: HP Smart Print Fleet Optimization
+description: Retrieve the printer fleet through an independently running MCP server, analyze device and fleet health, and generate evidence-based maintenance and optimization recommendations.
+practice_area: Fleet Management
+good_at:
+- MCP data retrieval
+- fleet analysis
+- recommendation generation
+- RAG-grounded decision support
+agents:
+- fleet_data_collector_agent
+- fleet_analyzer_agent
+- fleet_recommendation_agent
+execution:
+  type: sequential
+  steps:
+  - id: collect_fleet_data
+    type: agent
+    agent: fleet_data_collector_agent
+    next: analyze_fleet
+  - id: analyze_fleet
+    type: agent
+    agent: fleet_analyzer_agent
+    next: recommend_fleet_actions
+  - id: recommend_fleet_actions
+    type: agent
+    agent: fleet_recommendation_agent

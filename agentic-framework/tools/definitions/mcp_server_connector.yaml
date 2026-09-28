@@ -1,0 +1,19 @@
+id: mcp_server_connector
+name: MCP Server Connector
+description: Connects the agent to an independently running MCP server over Streamable HTTP and invokes one discovered MCP operation. The MCP server remains outside the Enterprise Agent Framework; this tool only performs the client-side protocol connection.
+purpose: Provide a framework-selectable tool for securely retrieving enterprise data through an external MCP server without embedding JIRA, PostgreSQL, ADO, or TestRail connectivity inside the framework.
+inputs:
+  - name: operation
+    type: string
+    description: "The MCP operation to invoke. Pass any operation name exposed by the connected server, or 'list_tools' to discover all available operations and their argument schemas."
+    required: true
+  - name: arguments
+    type: object
+    description: "JSON object containing arguments required by the target operation. Refer to the operation's schema or use 'list_tools' to inspect parameter requirements."
+    required: false
+  - name: server_url
+    type: string
+    description: Optional Streamable HTTP MCP endpoint. Defaults to MCP_SERVER_URL from the framework environment.
+    required: false
+output_description: The MCP server operation result, including structured data returned by the external connector.
+implementation_file: mcp_server_connector.py
