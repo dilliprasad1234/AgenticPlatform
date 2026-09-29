@@ -1,0 +1,12 @@
+﻿<Window x:Class="Demo.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel>
+            <TextBox AutomationProperties.AutomationId="UsernameInput" />
+            <PasswordBox AutomationProperties.AutomationId="PasswordInput" />
+            <Button AutomationProperties.AutomationId="LoginButton" Content="Login" />
+            <Button Content="Forgot Password" />
+        </StackPanel>
+    </Grid>
+</Window>
